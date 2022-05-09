@@ -1,3 +1,1 @@
-declare namespace Sequences {
-	type TestType = "test1" | "test2";
-}
+type TestType = 'test1' | 'test2';
