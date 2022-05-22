@@ -3,3 +3,4 @@ export class PluginTemplate {
     active = false;
     status = 'DISABLED';
 }
+export * from './types';
