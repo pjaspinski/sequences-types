@@ -2,11 +2,13 @@
   "name": "sequences-types",
   "version": "1.0.0",
   "description": "Types shared between Sequences backend, frontend and plugins.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "types": "index.d.ts",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc",
+    "watch": "npx tsc -w"
   },
   "repository": {
     "type": "git",
@@ -17,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/pjaspinski/sequences-types/issues"
   },
-  "homepage": "https://github.com/pjaspinski/sequences-types#readme"
+  "homepage": "https://github.com/pjaspinski/sequences-types#readme",
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
 }

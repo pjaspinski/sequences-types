@@ -1,16 +1,16 @@
 {
 	"compilerOptions": {
+		"experimentalDecorators": true,
 		"module": "esnext",
-		"lib": ["es6"],
-		"noImplicitAny": true,
-		"noImplicitThis": true,
-		"strictNullChecks": true,
-		"strictFunctionTypes": true,
-		"baseUrl": "../",
-		"typeRoots": ["../"],
-		"types": [],
-		"noEmit": true,
-		"forceConsistentCasingInFileNames": true
+		"esModuleInterop": true,
+		"target": "esnext",
+		"moduleResolution": "node",
+		"sourceMap": false,
+		"outDir": "dist",
+		"emitDecoratorMetadata": true,
+		"resolveJsonModule": true,
+		"declaration": true
 	},
-	"files": ["index.d.ts"]
+	"include": ["src"],
+	"exclude": ["node_modules"]
 }
