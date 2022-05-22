@@ -1,6 +1,12 @@
-export interface Plugin {
+import { Input } from './settingsInputs';
+
+export interface PluginDefinition {
 	name: string;
-	settingsFields: any[];
+	settingsFields: Input[];
+}
+
+export interface Plugin extends PluginDefinition {
+	id: number;
 }
 
 export * from './settingsInputs';

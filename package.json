@@ -4,6 +4,7 @@
   "description": "Types shared between Sequences backend, frontend and plugins.",
   "main": "index.js",
   "types": "index.d.ts",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

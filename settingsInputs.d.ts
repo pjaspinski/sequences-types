@@ -1,36 +1,33 @@
-export enum InputType {
-	NUMBER = 'NUMBER',
-	TEXT = 'TEXT',
-	CHECKBOX = 'CHECKBOX',
-	DROPDOWN = 'DROPDOWN',
-}
+export type InputType = 'NUMBER' | 'TEXT' | 'CHECKBOX' | 'DROPDOWN';
 
-export interface Input {
+export interface InputBase {
 	id: string;
 	required: boolean;
 	type: InputType;
+	label: string;
 }
 
-export interface NumberInput extends Input {
-	type: InputType.NUMBER;
+export interface NumberInput extends InputBase {
+	type: 'NUMBER';
 	value: number;
 	max?: number;
 	min?: number;
 }
 
-export interface TextInput extends Input {
-	type: InputType.TEXT;
+export interface TextInput extends InputBase {
+	type: 'TEXT';
 	value: string;
-	regex?: RegExp;
+	regex?: string;
 }
 
-export interface CheckboxInput extends Input {
-	type: InputType.CHECKBOX;
+export interface CheckboxInput extends InputBase {
 	value: boolean;
+	type: 'CHECKBOX';
+	required: false;
 }
 
-export interface DropdownInput extends Input {
-	type: InputType.DROPDOWN;
+export interface DropdownInput extends InputBase {
+	type: 'DROPDOWN';
 	value: string;
 	options: DropdownOption[];
 }
@@ -40,4 +37,4 @@ export interface DropdownOption {
 	value: string;
 }
 
-export type Inputs = (TextInput | NumberInput | CheckboxInput | DropdownInput)[];
+export type Input = TextInput | NumberInput | CheckboxInput | DropdownInput;
