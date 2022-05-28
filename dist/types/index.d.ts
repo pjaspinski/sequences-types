@@ -1,5 +1,10 @@
 export declare type PluginSettings = {
     [index: string]: string;
 };
-export declare type PluginStatus = 'DISABLED' | 'RUNNING' | 'ERROR' | 'LOADING';
-export * from './settingsInputs';
+export declare enum PluginStatus {
+    DISABLED = "DISABLED",
+    RUNNING = "RUNNING",
+    ERROR = "ERROR",
+    LOADING = "LOADING"
+}
+export * from './settingsInputs.js';
