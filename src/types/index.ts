@@ -7,3 +7,4 @@ export enum PluginStatus {
 }
 
 export * from './settingsInputs.js';
+export * from './sockets.js';

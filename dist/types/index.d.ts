@@ -8,3 +8,4 @@ export declare enum PluginStatus {
     LOADING = "LOADING"
 }
 export * from './settingsInputs.js';
+export * from './sockets.js';
