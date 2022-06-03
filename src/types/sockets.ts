@@ -1,7 +1,7 @@
 import { PluginStatus } from '.';
 
 export interface ServerToClientEvents {
-	pluginStatusChange: (pluginId: number, newStatus: PluginStatus) => void;
+	pluginStatusChange: (payload: PluginStatusChangedPayload) => void;
 }
 
 export interface ClientToServerEvents {
@@ -18,7 +18,7 @@ export interface SocketData {
 
 export interface PluginStatusChangedPayload {
 	pluginId: number;
-	newStatus: PluginStatus;
+	status: PluginStatus;
 }
 
 export type ClientToServerPayloads = PluginStatusChangedPayload;
