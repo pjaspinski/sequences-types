@@ -7,7 +7,7 @@ export abstract class PluginTemplate extends EventEmitter {
 	name: string;
 	id: number;
 	active: boolean = false;
-	status: PluginStatus;
+	private status: PluginStatus;
 	abstract setup(options: PluginSettings): void;
 	abstract destroy(): void;
 	constructor(id: number) {
@@ -15,9 +15,14 @@ export abstract class PluginTemplate extends EventEmitter {
 		this.status = PluginStatus.DISABLED;
 		this.id = id;
 	}
+
 	setStatus(status: PluginStatus) {
 		this.emit('pluginStatusChange', { pluginId: this.id, status: status });
 		this.status = status;
+	}
+
+	getStatus() {
+		return this.status;
 	}
 }
 
