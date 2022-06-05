@@ -7,10 +7,11 @@ export declare abstract class PluginTemplate extends EventEmitter {
     name: string;
     id: number;
     active: boolean;
-    status: PluginStatus;
+    private status;
     abstract setup(options: PluginSettings): void;
     abstract destroy(): void;
     constructor(id: number);
     setStatus(status: PluginStatus): void;
+    getStatus(): PluginStatus;
 }
 export * from './types/index.js';

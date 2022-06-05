@@ -15,5 +15,8 @@ export class PluginTemplate extends EventEmitter {
         this.emit('pluginStatusChange', { pluginId: this.id, status: status });
         this.status = status;
     }
+    getStatus() {
+        return this.status;
+    }
 }
 export * from './types/index.js';
