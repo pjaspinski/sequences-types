@@ -21,8 +21,8 @@ export interface TextInput extends InputBase {
 }
 
 export interface CheckboxInput extends InputBase {
-	value: boolean;
 	type: 'CHECKBOX';
+	value: boolean;
 	required: false;
 }
 
