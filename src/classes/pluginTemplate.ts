@@ -1,4 +1,4 @@
-import { Action, PluginModel, PluginSettings, PluginStatus } from '../types/index.js';
+import { Action, ActiveAction, PluginModel, PluginSettings, PluginStatus } from '../types/index.js';
 import { Input } from '../types/settingsInputs.js';
 import EventEmitter from 'events';
 
@@ -10,6 +10,7 @@ export abstract class PluginTemplate extends EventEmitter {
 	private status: PluginStatus;
 	abstract setup(options: PluginSettings): void;
 	abstract destroy(): void;
+	abstract handleAction(action: ActiveAction): void;
 	constructor() {
 		super();
 		this.status = PluginStatus.DISABLED;

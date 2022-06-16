@@ -29,6 +29,7 @@ export interface CheckboxInput extends InputBase {
 export interface DropdownInput extends InputBase {
 	type: 'DROPDOWN';
 	value: string;
+	placeholder: string;
 	options: DropdownOption[];
 }
 
