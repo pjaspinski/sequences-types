@@ -13,7 +13,7 @@ export abstract class PluginTemplate extends EventEmitter {
 	abstract handleAction(action: ActiveAction): void;
 	constructor() {
 		super();
-		this.status = PluginStatus.DISABLED;
+		this.status = 'DISABLED';
 	}
 
 	setStatus(status: PluginStatus) {

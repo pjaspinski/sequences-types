@@ -1,9 +1,8 @@
-import { PluginStatus } from '../types/index.js';
 import EventEmitter from 'events';
 export class PluginTemplate extends EventEmitter {
     constructor() {
         super();
-        this.status = PluginStatus.DISABLED;
+        this.status = 'DISABLED';
     }
     setStatus(status) {
         this.emit('pluginStatusChange', { pluginId: this.id, status: status });

@@ -9,9 +9,4 @@ export interface PluginModel {
 
 export type PluginSettings = { [index: string]: string };
 
-export enum PluginStatus {
-	DISABLED = 'DISABLED',
-	RUNNING = 'RUNNING',
-	ERROR = 'ERROR',
-	LOADING = 'LOADING',
-}
+export type PluginStatus = 'DISABLED' | 'RUNNING' | 'ERROR' | 'LOADING';
