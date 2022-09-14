@@ -4,6 +4,7 @@ import { Input } from '../types/settingsInputs.js';
 import EventEmitter from 'events';
 export declare abstract class PluginTemplate extends EventEmitter {
     settingsInputs: Input[];
+    lastSettings: PluginSettings;
     name: string;
     id: number;
     actions: Action[];

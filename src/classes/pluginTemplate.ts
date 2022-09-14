@@ -4,6 +4,7 @@ import EventEmitter from 'events';
 
 export abstract class PluginTemplate extends EventEmitter {
 	settingsInputs: Input[];
+	lastSettings: PluginSettings;
 	name: string;
 	id: number;
 	actions: Action[];
@@ -13,11 +14,15 @@ export abstract class PluginTemplate extends EventEmitter {
 	abstract handleAction(action: ActiveAction): void;
 	constructor() {
 		super();
-		this.status = 'DISABLED';
+		this.status = 'REMOVED';
 	}
 
 	setStatus(status: PluginStatus) {
-		this.emit('pluginStatusChange', { pluginId: this.id, status: status });
+		this.emit('pluginStatusChange', {
+			pluginId: this.id,
+			status: status,
+			lastSettings: this.lastSettings,
+		});
 		this.status = status;
 	}
 
@@ -31,6 +36,7 @@ export abstract class PluginTemplate extends EventEmitter {
 			name: this.name,
 			settingsInputs: this.settingsInputs,
 			status: this.status,
+			lastSettings: this.lastSettings,
 		};
 	}
 

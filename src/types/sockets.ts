@@ -1,7 +1,11 @@
-import { PluginStatus } from '.';
+import { PlayoutStatus, PluginSettings, PluginStatus, Sequence } from '.';
 
 export interface ServerToClientEvents {
 	pluginStatusChange: (payload: PluginStatusChangedPayload) => void;
+	sequenceStatusChange: (payload: SequenceStatusChangedPayload) => void;
+	sequenceCreated: (payload: Sequence) => void;
+	sequenceUpdated: (payload: Sequence) => void;
+	sequenceDeleted: (payload: SequenceDeletedPayload) => void;
 }
 
 export interface ClientToServerEvents {
@@ -19,8 +23,21 @@ export interface SocketData {
 export interface PluginStatusChangedPayload {
 	pluginId: number;
 	status: PluginStatus;
+	lastSettings: PluginSettings;
+}
+
+export interface SequenceStatusChangedPayload {
+	id: number;
+	status: PlayoutStatus;
+}
+
+export interface SequenceDeletedPayload {
+	id: number;
 }
 
 export type ClientToServerPayloads = PluginStatusChangedPayload;
 
-export type ServerToClientPayloads = PluginStatusChangedPayload; // to be changed later
+export type ServerToClientPayloads =
+	| PluginStatusChangedPayload
+	| SequenceStatusChangedPayload
+	| SequenceDeletedPayload;

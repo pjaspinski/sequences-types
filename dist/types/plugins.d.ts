@@ -4,8 +4,9 @@ export interface PluginModel {
     name: string;
     settingsInputs: Input[];
     status: PluginStatus;
+    lastSettings: PluginSettings;
 }
 export declare type PluginSettings = {
     [index: string]: string;
 };
-export declare type PluginStatus = 'DISABLED' | 'RUNNING' | 'ERROR' | 'LOADING';
+export declare type PluginStatus = 'REMOVED' | 'DISABLED' | 'RUNNING' | 'ERROR' | 'LOADING';
