@@ -2,7 +2,7 @@ import { Input } from './settingsInputs';
 import { Worker } from 'node:worker_threads';
 
 export interface Sequence {
-	id: number;
+	id: string;
 	name: string;
 	pluginId: number;
 	actions: ActiveAction[];
