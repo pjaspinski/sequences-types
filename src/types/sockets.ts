@@ -6,10 +6,13 @@ export interface ServerToClientEvents {
 	sequenceCreated: (payload: Sequence) => void;
 	sequenceUpdated: (payload: Sequence) => void;
 	sequenceDeleted: (payload: SequenceDeletedPayload) => void;
+	sequences: (payload: Sequence[]) => void;
 }
-
 export interface ClientToServerEvents {
-	ping: (payload: ClientToServerPayloads) => void; // to be removed later
+	playPause: (sequenceId: string) => void;
+	stop: (sequenceId: string) => void;
+	restart: (sequenceId: string) => void;
+	getSequences: () => void;
 }
 
 export interface InterServerEvents {
@@ -27,12 +30,12 @@ export interface PluginStatusChangedPayload {
 }
 
 export interface SequenceStatusChangedPayload {
-	id: number;
+	id: string;
 	status: PlayoutStatus;
 }
 
 export interface SequenceDeletedPayload {
-	id: number;
+	id: string;
 }
 
 export type ClientToServerPayloads = PluginStatusChangedPayload;
