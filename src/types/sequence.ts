@@ -38,6 +38,6 @@ export interface Action {
 }
 
 export interface ActionsModel {
-	name: string;
+	id: number;
 	actions: Action[];
 }

@@ -32,6 +32,6 @@ export interface Action {
     settingsInputs: Input[];
 }
 export interface ActionsModel {
-    name: string;
+    id: number;
     actions: Action[];
 }
